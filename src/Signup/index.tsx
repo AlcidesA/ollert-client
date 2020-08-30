@@ -1,6 +1,8 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import { Button, TextField, Box } from '@material-ui/core';
 import * as Yup from 'yup';
+import { Section, Title, Wrapper } from './styles';
 
 const SignupForm = () => {
   const formik = useFormik({
@@ -21,33 +23,47 @@ const SignupForm = () => {
 
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <input
-        name="name"
-        type="name"
-        placeholder="Enter full name"
-        onChange={formik.handleChange}
-        value={formik.values.name}
-      />
-      
-      <input
-        name="email"
-        type="email"
-        placeholder="Enter email"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
+    <Section>
+      <Wrapper>
+        <Title>Sign up for your account</Title>
 
-      <input
-        name="password"
-        type="password"
-        placeholder="Create password"
-        onChange={formik.handleChange}
-        value={formik.values.password}
-      />
+        <form onSubmit={formik.handleSubmit}>
+          <TextField
+            fullWidth
+            margin="dense"
+            name="name"
+            type="name"
+            placeholder="Enter full name"
+            onChange={formik.handleChange}
+            value={formik.values.name}
+          />
+          
+          <TextField
+            fullWidth
+            margin="dense"
+            name="email"
+            type="email"
+            placeholder="Enter email"
+            onChange={formik.handleChange}
+            value={formik.values.email}
+          />
 
-      <button type="submit">Submit</button>
-    </form>
+          <TextField
+            fullWidth
+            margin="dense"
+            name="password"
+            type="password"
+            placeholder="Create password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
+          />
+
+          <Box mt={2}>
+            <Button fullWidth type="submit" color="primary" variant="contained">Submit</Button>
+          </Box>
+        </form>
+      </Wrapper>      
+    </Section>
   );
 };
 
