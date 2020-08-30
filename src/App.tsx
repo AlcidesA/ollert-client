@@ -1,12 +1,12 @@
-import React from 'react';
-import SignupForm from './Signup';
+import React from 'react'
+import SignupForm from './Signup'
 
-function App() {
+function App () {
   return (
     <div className="App">
       <SignupForm />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

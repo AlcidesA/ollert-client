@@ -1,8 +1,8 @@
-import React from 'react';
-import { useFormik } from 'formik';
-import { Button, TextField, Box } from '@material-ui/core';
-import * as Yup from 'yup';
-import { Section, Title, Wrapper } from './styles';
+import React from 'react'
+import { useFormik } from 'formik'
+import { Button, TextField, Box } from '@material-ui/core'
+import * as Yup from 'yup'
+import { Section, Title, Wrapper } from './styles'
 
 const SignupForm = () => {
   const formik = useFormik({
@@ -18,9 +18,8 @@ const SignupForm = () => {
     }),
     onSubmit: values => {
       console.log(values)
-    },
-  });
-
+    }
+  })
 
   return (
     <Section>
@@ -37,7 +36,7 @@ const SignupForm = () => {
             onChange={formik.handleChange}
             value={formik.values.name}
           />
-          
+
           <TextField
             fullWidth
             margin="dense"
@@ -62,9 +61,9 @@ const SignupForm = () => {
             <Button fullWidth type="submit" color="primary" variant="contained">Submit</Button>
           </Box>
         </form>
-      </Wrapper>      
+      </Wrapper>
     </Section>
-  );
-};
+  )
+}
 
 export default SignupForm
