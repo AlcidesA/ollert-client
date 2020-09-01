@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import { Button, TextField, Box } from '@material-ui/core'
 import * as Yup from 'yup'
 import { Section, Title, Wrapper } from './styles'
+import Api from '../providers/Api'
 
 const SignupForm = () => {
   const formik = useFormik({
@@ -16,8 +17,15 @@ const SignupForm = () => {
       email: Yup.string().email('Invalid email address').required('Required'),
       password: Yup.string().required()
     }),
-    onSubmit: values => {
-      console.log(values)
+    onSubmit: async values => {
+      try {
+        // eslint-disable-next-line no-unused-vars
+        const response = await Api.post('/users', values)
+
+        // todo: handle api response
+      } catch (error) {
+        console.error(error)
+      }
     }
   })
 
