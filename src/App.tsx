@@ -1,11 +1,9 @@
 import React from 'react'
-import SignupForm from './Signup'
+import Routes from './routes';
 
 function App () {
   return (
-    <div className="App">
-      <SignupForm />
-    </div>
+    <Routes></Routes>
   )
 }
 
