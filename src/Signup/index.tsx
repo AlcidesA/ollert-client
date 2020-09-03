@@ -66,7 +66,7 @@ const SignupForm = () => {
           />
 
           <Box mt={2}>
-            <Button fullWidth type="submit" color="primary" variant="contained">Submit</Button>
+            <Button fullWidth type="submit" color="primary" variant="contained">Continue</Button>
           </Box>
         </form>
       </Wrapper>
