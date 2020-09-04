@@ -3,7 +3,7 @@ import { useFormik } from 'formik'
 import { Button, TextField, Box } from '@material-ui/core'
 import * as Yup from 'yup'
 import { Section, Title, Wrapper } from './styles'
-import Api from '../providers/Api'
+import Api from '../../providers/Api'
 import { useHistory } from 'react-router-dom'
 
 const SignupForm = () => {

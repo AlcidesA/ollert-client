@@ -3,6 +3,7 @@ import * as Yup from 'yup'
 import { useFormik } from 'formik'
 import { Section, Title, Wrapper } from './styles'
 import { Button, TextField, Box } from '@material-ui/core'
+import Api from '../../providers/Api'
 
 const Login = () => {
   const formik = useFormik({
