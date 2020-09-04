@@ -4,8 +4,11 @@ import { Button, TextField, Box } from '@material-ui/core'
 import * as Yup from 'yup'
 import { Section, Title, Wrapper } from './styles'
 import Api from '../providers/Api'
+import { useHistory } from 'react-router-dom'
 
 const SignupForm = () => {
+  const history = useHistory()
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -19,10 +22,9 @@ const SignupForm = () => {
     }),
     onSubmit: async values => {
       try {
-        // eslint-disable-next-line no-unused-vars
-        const response = await Api.post('/users', values)
+        await Api.post('/users', values)
 
-        // todo: handle api response
+        history.push('/')
       } catch (error) {
         console.error(error)
       }
