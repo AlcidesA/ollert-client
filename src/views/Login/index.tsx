@@ -16,7 +16,17 @@ const Login = () => {
       password: Yup.string().required()
     }),
     onSubmit: async values => {
-      console.log(values)
+      const { email, password } = values
+
+      try {
+        const response = await Api.post('authenticate', { email, password })
+
+        localStorage.setItem('user', JSON.stringify(response.data))
+
+        // todo: redirect to private route
+      } catch (error) {
+        console.error(error)
+      }
     }
   })
 
