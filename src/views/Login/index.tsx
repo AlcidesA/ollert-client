@@ -1,11 +1,14 @@
 import React from 'react'
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
+import { useHistory } from 'react-router-dom'
 import { Section, Title, Wrapper } from './styles'
 import { Button, TextField, Box } from '@material-ui/core'
 import Api from '../../providers/Api'
 
 const Login = () => {
+  const history = useHistory()
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -23,7 +26,7 @@ const Login = () => {
 
         localStorage.setItem('user', JSON.stringify(response.data))
 
-        // todo: redirect to private route
+        history.push('/')
       } catch (error) {
         console.error(error)
       }
