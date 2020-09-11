@@ -2,7 +2,7 @@ import React from 'react'
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
 import { useHistory } from 'react-router-dom'
-import { Section, Title, Wrapper } from './styles'
+import { Section, Title, Wrapper, StyledLink } from './styles'
 import { Button, TextField, Box } from '@material-ui/core'
 import Api from '../../providers/Api'
 
@@ -63,6 +63,8 @@ const Login = () => {
             <Button fullWidth type="submit" color="primary" variant="contained">Log in</Button>
           </Box>
         </form>
+
+        <StyledLink to="/signup">Sign up</StyledLink>
       </Wrapper>
     </Section>
   )

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Section = styled.section`
@@ -11,6 +12,7 @@ export const Wrapper = styled.div`
     max-width: 25rem;
     border-radius: 0.2rem;
     padding: 1.625rem 2.5rem;
+    text-align: center;
     
     @media (min-width: 768px){
         background-color: #FFF;
@@ -19,9 +21,13 @@ export const Wrapper = styled.div`
 `
 
 export const Title = styled.h1`
-    display: block;
     margin: 0.5rem 0 1rem;
     font-size: 1rem;
-    text-align: center;
     color: #5E6C84;
+`
+
+export const StyledLink = styled(Link)`
+    color: #0052CC;
+    display: inline-block;
+    margin-top: 1rem;
 `
