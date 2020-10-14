@@ -14,9 +14,15 @@ export default class User {
     return !!user
   }
 
-  static get(): AuthUser {
+  static get (): AuthUser {
     const user = localStorage.getItem('user')
 
-    return JSON.parse(user ?? "{}")
+    return JSON.parse(user ?? '{}')
+  }
+
+  static logout (): void {
+    localStorage.removeItem('user')
+
+    window.location.reload()
   }
 }
